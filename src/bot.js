@@ -35,7 +35,8 @@ const cleaning = require('./handlers/commands/cleaning');
 const topicsH = require('./handlers/commands/topics');
 const federations = require('./handlers/commands/federations');
 const economy = require('./handlers/commands/economy');
-const games = require('./handlers/commands/games');
+const games    = require('./handlers/commands/games');
+const wordseek = require('./handlers/commands/wordseek');
 const anime = require('./handlers/commands/anime');
 const extras = require('./handlers/commands/extras');
 const ownerCmds = require('./handlers/commands/owner');
@@ -66,6 +67,7 @@ bot.use(antiflood.antifloodMiddleware);            // antiflood
 bot.use(linkprotect.linkProtectMiddleware);         // link protection
 bot.use(aiModeration);                             // Groq AI scan
 bot.use(games.triviaMiddleware);                   // trivia answers
+bot.use(wordseek.wordseekMiddleware);              // wordseek word detection
 bot.use(notes.hashtagMiddleware);                  // #notename
 bot.use(filters.filterMiddleware);                 // text filters
 bot.use(cleaning.cleanCommandMiddleware);          // delete commands after run
@@ -292,7 +294,10 @@ bot.command('wordguess', games.wordguess);
 bot.command('gamew', games.gamew);
 bot.command('guess', games.guess);
 bot.command('trivia', games.trivia);
-bot.command('wordseek', games.wordseek);
+bot.command(['wordseek', 'ws'], wordseek.wordseekStart);
+bot.command(['stopwordseek', 'wsend', 'stopws'], wordseek.stopWordseek);
+bot.command(['wshint', 'wsh'], wordseek.wshint);
+bot.command(['wsthemes', 'wst'], wordseek.wsthemes);
 
 // Extras
 bot.command(['formathelp', 'markdownhelp'], extras.formathelp);

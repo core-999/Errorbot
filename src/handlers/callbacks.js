@@ -132,10 +132,13 @@ const HELP_MENU = {
   help_games: {
     title:
       `<blockquote>╔══════════════╗\n║ 🎮 <b>${ff('Games')}</b> 🎮 ║\n╚══════════════╝\n\n` +
-      `🟩 /wordguess — 5-letter word game\n🔤 /gamew &lt;word&gt; — submit guess\n❓ /trivia — quick trivia (+25 coins)\n🔍 /wordseek — Word Search puzzle\n🎱 /8ball &lt;question&gt;\n💘 /ship (reply) — ship meter\n🎭 /truth  /dare  /tod</blockquote>`,
-    rows: [
-      [[`🔍 ${ff('Play WordSeek')}`, 'wordseek_play']],
-    ],
+      `🟩 /wordguess — 5-letter word guessing game\n🔤 /gamew &lt;word&gt; — submit your guess\n❓ /trivia — quick trivia (+25 coins)\n\n` +
+      `🔍 <b>/wordseek [theme]</b> — Word Search puzzle!\n` +
+      `   Words hidden in a 10×10 letter grid\n` +
+      `   Themes: anime | nature | space | gaming | country\n` +
+      `   Type any word to find it — earn <b>+40 coins</b> per word!\n` +
+      `💡 /wshint — hint (costs 25 coins)\n🛑 /stopwordseek — end the game\n🎨 /wsthemes — list all themes\n\n` +
+      `🎱 /8ball &lt;question&gt;\n💘 /ship (reply) — ship meter\n🎭 /truth  /dare  /tod</blockquote>`,
     back: 'help_main',
   },
   help_anime: {

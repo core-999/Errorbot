@@ -89,20 +89,4 @@ const guess = async (ctx) => {
   await safeReply(ctx, '🎥 <b>Anime/Movie guess</b> coming soon — try /trivia or /wordguess.');
 };
 
-const { Markup } = require('telegraf');
-const { ff } = require('../../utils/font');
-
-const wordseek = async (ctx) => {
-  const msg =
-    `<blockquote>╔══════════════════╗\n║ 🔍 <b>${ff('WordSeek Puzzle')}</b> 🔍 ║\n╚══════════════════╝\n\n` +
-    `${ff('Find hidden words in a grid of letters!')}\n\n` +
-    `✨ ${ff('Tap the button below to start playing!')}</blockquote>`;
-
-  const kb = Markup.inlineKeyboard([
-    [Markup.button.url(`🔍 ${ff('Play WordSeek Now')}`, 'https://t.me/WordSeekBot')],
-  ]);
-
-  await safeReply(ctx, msg, { parse_mode: 'HTML', ...kb });
-};
-
-module.exports = { wordguess, gamew, guess, trivia, triviaMiddleware, wordseek };
+module.exports = { wordguess, gamew, guess, trivia, triviaMiddleware };
