@@ -1,7 +1,7 @@
 {
-  "name": "hinata-bot",
+  "name": "myanmar-bot",
   "version": "2.0.0",
-  "description": "Hinata - Advanced Telegram Bot with Groq AI (vision moderation)",
+  "description": "myanmar - Advanced Telegram Bot with Groq AI (vision moderation)",
   "main": "src/bot.js",
   "scripts": {
     "start": "node src/bot.js",
